@@ -48,40 +48,78 @@ public class Main {
             Hatchback back = new Hatchback();
             HashMap<String,Integer> map = new HashMap<>();
             map = back.hatchBackBill(services);
+
+            //Get Total Bill
             int total = 0;
             for(Map.Entry<String,Integer> itr : map.entrySet()){
                 total += itr.getValue();
             }
-            for(Map.Entry<String,Integer> itr : map.entrySet()) {
-                System.out.println(itr.getKey()+" : "+itr.getValue());
+            //Name Of car and codes of services
+            System.out.println("Type of car - "+carName);
+
+            ArrayList<String> code = new ArrayList<>();
+            code = back.sCodes(services);
+            System.out.print("Service codes - ");
+            for(String num : code){
+                System.out.print(num+", ");
             }
-            System.out.println("Total Bill : "+total);
+            System.out.println();
+            //Print Service names and costs
+            for(Map.Entry<String,Integer> itr : map.entrySet()) {
+                System.out.println("Charges for "+ itr.getKey()+" - "+itr.getValue());
+            }
+            System.out.println("Total Bill - "+"₹ "+total);
         }
         else if(carName.equalsIgnoreCase("Sedan")){
             Sedan sedan = new Sedan();
             HashMap<String,Integer> map = new HashMap<>();
             map = sedan.SedanBill(services);
+            //Get Total Bill
             int total = 0;
             for(Map.Entry<String,Integer> itr : map.entrySet()){
                 total += itr.getValue();
             }
-            for(Map.Entry<String,Integer> itr : map.entrySet()) {
-                System.out.println(itr.getKey()+" : "+itr.getValue());
+            //Name Of car and codes of services
+            System.out.println("Type of car - "+carName);
+
+            ArrayList<String> code = new ArrayList<>();
+            code = sedan.sCodes(services);
+            System.out.print("Service codes - ");
+            for(String num : code){
+                System.out.print(num+", ");
             }
-            System.out.println("Total Bill : "+total);
+            System.out.println();
+            //Print Service names and costs
+            for(Map.Entry<String,Integer> itr : map.entrySet()) {
+                System.out.println("Charges for "+" "+ itr.getKey()+" - "+itr.getValue());
+            }
+            System.out.println("Total Bill : "+"₹ "+total);
         }
         else if(carName.equalsIgnoreCase("SUV")){
             SUV suv = new SUV();
             HashMap<String,Integer> map = new HashMap<>();
             map = suv.SuvBill(services);
+            //Get Total Bill
             int total = 0;
             for(Map.Entry<String,Integer> itr : map.entrySet()){
                 total += itr.getValue();
             }
-            for(Map.Entry<String,Integer> itr : map.entrySet()) {
-                System.out.println(itr.getKey()+" : "+itr.getValue());
+            //Name Of car and codes of services
+            System.out.println("Type of car - "+carName);
+
+            ArrayList<String> code = new ArrayList<>();
+            code = suv.sCodes(services);
+            System.out.print("Service codes - ");
+            for(String num : code){
+                System.out.print(num);
             }
-            System.out.println("Total Bill : "+total);
+            System.out.println();
+
+            //Print Service names and costs
+            for(Map.Entry<String,Integer> itr : map.entrySet()) {
+                System.out.println("Charges for "+" "+ itr.getKey()+" - "+itr.getValue());
+            }
+            System.out.println("Total Bill - "+"₹ "+total);
         }
 
     }

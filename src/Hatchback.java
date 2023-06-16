@@ -2,6 +2,29 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Hatchback {
+
+    public ArrayList<String> sCodes(ArrayList<String> arr){
+        ArrayList<String> newList = new ArrayList<>();
+
+        for(String num : arr){
+            if(num.equalsIgnoreCase("Basic servicing")){
+                newList.add("BS01");
+            }
+            else if(num.equalsIgnoreCase("Engine Fixing")){
+                newList.add("EF01");
+            }
+            else if(num.equalsIgnoreCase("Clutch Fixing")){
+                newList.add("CF01");
+            }
+            else if(num.equalsIgnoreCase("Brake Fixing")){
+                newList.add("BF01");
+            }
+            else if(num.equalsIgnoreCase("Gear Fixing")){
+                newList.add("GF01");
+            }
+        }
+        return newList;
+    }
     public Integer price(String str){
         if(str.equalsIgnoreCase("Basic servicing")){
             return 2000;
